@@ -1,0 +1,22 @@
+<div class="result-header">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="records">Showing: <b>{{to > 0 ? from+1 : from}} - {{to}} </b> of <b><span *ngIf="total?.relation == 'gte'">~</span>{{total?.value}}</b> result</div>
+        <small class="text-muted" *ngIf="keywords">Searching for keyword(s) <b>{{keywords}}</b></small>
+      </div>
+      <div class="col-lg-3">
+        <div class="result-actions pull-right">
+          <div class="result-sorting" >
+            <span>Sort By:</span>
+            <select class="form-control border-0" id="exampleOption">
+              <option value="1">Relevance</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-2"> 
+        <app-pages [total]="total"></app-pages>
+      </div>
+    </div>
+  </div>

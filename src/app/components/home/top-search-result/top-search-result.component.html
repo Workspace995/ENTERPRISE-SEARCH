@@ -1,0 +1,25 @@
+<div class="card card-margin" *ngIf="search">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-12">
+        <small class="text-muted">{{search.query}}</small>
+        <div *ngIf="search?.summarization_response">
+          <small class="text-primary">Summary:</small>
+          <blockquote class="blockquote">{{search.summarization_response}}</blockquote>
+        </div>
+          <div class="col-lg-12 mt-1 card card-margin card-body" *ngIf="search?.sql_response">
+            <small class="text-primary">Relational Database:</small>
+            <blockquote class="blockquote">{{search.sql_response}}</blockquote>
+          </div>
+        <div class="col-lg-12 card card-margin card-body" *ngIf="search?.s3_response">
+          <small class="text-primary">Response:</small>
+          <blockquote class="blockquote">{{search.s3_response}}</blockquote>
+        </div>
+        <div *ngIf="search?.docs">
+          <small class="text-muted">Related Documents:</small>
+          <small class="text-muted" *ngFor="let doc of search.docs"><br/><a href="{{doc}}" target="_blank" >{{doc}}</a></small>
+      </div>
+      </div>
+      </div>
+  </div>
+</div>

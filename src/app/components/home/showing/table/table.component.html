@@ -1,0 +1,26 @@
+<div class="result-body">
+  <div class="">
+    <div class="table widget-26">
+      <div *ngFor="let hit of result">
+
+       <!--<app-grants *ngIf="hit._source.source == 'active-grants'" [hit]="hit"></app-grants>-->
+        <!-- <app-openfda *ngIf="hit._source.source == 'openFDA'" [hit]="hit"></app-openfda> -->
+        <!-- <app-s3 *ngIf="hit._source.source == 's3'" [hit]="hit"></app-s3>    -->
+
+
+        <!-- <app-s3 *ngIf="hit._source.source == 's3'" [hit]="hit"></app-s3>    -->
+        <!-- <app-sap *ngIf="hit._source.source == 'sap'" [hit]="hit"></app-sap>    -->
+
+
+        <!-- <app-ctp *ngIf="hit._source.source == 'ctp'" [hit]="hit"></app-ctp>-->
+
+
+         <app-sap [hit]="hit"></app-sap>
+
+
+
+        <hr *ngIf="hit._source.source" />
+      </div>
+    </div>
+  </div>
+</div>

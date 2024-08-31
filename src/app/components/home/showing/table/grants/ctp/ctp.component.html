@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-2">
+        <div class="widget-26-job-category bg-soft-base">
+            <div> {{ hit._source['source'] | menulabel }}</div>
+        </div><br/>
+        <div class="badge badge-secondary">{{ hit._source['filetype']}}</div>
+    </div>
+    <div class="col-5">
+        <div class="widget-26-job-title">
+            <a href="{{ hit._source['uri']}}" target="_blank" [innerHTML]=" highlight('title')"></a>
+            <p class="m-0"><span class="employer-name">Version: {{ hit._source['version'] }}</span></p>
+            
+        </div>
+    </div>
+    <div class="col-5">
+        <div class="widget-26-job-title">
+            <p class="text-muted m-0"> <a href="{{ hit._source['uri']}}" target="_blank" >{{ hit._source['uri']}}</a></p>
+        </div>
+    </div>
+</div>

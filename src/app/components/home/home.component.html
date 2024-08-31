@@ -1,0 +1,12 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+    <div class="row mb-3 mt-1">
+        <app-tabmenu class="col-12 mx-auto bg-white"></app-tabmenu>
+    </div>
+    <div class="row" *ngIf="selectedSource != 'structure'">
+        <app-filter class="col-3"></app-filter>
+        <app-showing class="col-9"></app-showing>
+    </div>
+    <div class="row" *ngIf="selectedSource == 'structure'"><app-structured></app-structured></div>
+    <app-chat></app-chat>
+</div>

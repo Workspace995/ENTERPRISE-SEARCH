@@ -1,0 +1,33 @@
+<!-- <div class="card col-12 col-md-4 offset-md-4 card-margin" style="height: 100%;">
+  <div class="row card-body ">
+    <form id="search-form" [formGroup]="strctureForm" (submit)="send()">
+      <div class="input-group mb-3">
+        <input formControlName="message" type="text" class=" form-control" placeholder="Search..." />
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+    <small class="text-muted">{{question}}</small>
+    <blockquote *ngIf="!isSearching" class="blockquote">{{answer}}</blockquote>
+    <div *ngIf="isSearching" class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="card col-12 col-md-6 offset-md-3 card-margin">
+  <div class="row card-body">
+    <form id="search-form" (submit)="onSubmit()" class="w-100">
+      <div class="form-group mb-3">
+        <label for="inputGroupFile" class="form-label">Choose file</label>
+        <div class="input-group">
+          <input type="file" class="form-control" id="inputGroupFile" (change)="onFileSelected($event)">
+          <label class="input-group-text btn-secondary" for="inputGroupFile">Browse</label>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

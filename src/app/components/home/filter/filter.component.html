@@ -1,0 +1,60 @@
+<!-- <div class="card card-margin">
+  <div class="card-body">
+    <div class="row search-body">
+      <div class="col-lg-12">
+        <div>
+          <h2 class="grid-title pull-left"><i class="fa fa-filter"></i> Filters</h2>
+          <a class="pull-right" href="javascript:;" (click)="clearFilters()">Clear filters</a>
+        </div>
+        <hr>
+        <span *ngFor="let filter of filters">
+          <div class="py-3" *ngIf="filter.display != false && filter.filterables.length > 0">
+            <h5 class="font-weight-bold">{{filter.name}}</h5>
+            <app-multiselectdropdown [options]="filter.filterables" [selected]="filter.selected"
+              (onChange)="valueUpdated(filter, $event)"></app-multiselectdropdown>
+          </div>
+        </span>
+        <app-datefilters *ngIf="dateFilterDisplay"></app-datefilters>
+        <div class="alert alert-info" *ngIf="!dateFilterDisplay && !filtersAvailable">No filters available!</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="card card-margin">
+  <div class="card-body">
+    <div class="row search-body">
+      <div class="col-lg-12">
+          <div class="csr-container">
+            <div class="csr-template">
+              <h5>
+                <button class="custom-button" (click)="openImageUploadPopup()">CSR Template</button>
+              </h5>
+            </div>
+          </div>
+          
+        
+        <div class="filter-container">
+          <h2 class="grid-title pull-left"><i class="fa fa-filter"></i> Filters</h2>
+          <a class="pull-right" href="javascript:;" (click)="clearFilters()">Clear filters</a>
+        </div>
+        <hr>
+        <span *ngFor="let filter of filters">
+          <div class="py-3" *ngIf="filter.display != false && filter.filterables.length > 0">
+            <h5 class="font-weight-bold">{{filter.name}}</h5>
+            <app-multiselectdropdown [options]="filter.filterables" [selected]="filter.selected"
+              (onChange)="valueUpdated(filter, $event)"></app-multiselectdropdown>
+          </div>
+          
+        </span>
+
+      <app-datefilters *ngIf="dateFilterDisplay"></app-datefilters>
+
+      <div class="alert alert-info" *ngIf="!dateFilterDisplay && !filtersAvailable">No filters available!</div>
+      <app-image-upload *ngIf="isImageUploadPopupOpen" (closePopup)="closeImageUploadPopup()"></app-image-upload>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Login</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <form [formGroup]="loginForm" (submit)="login()">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input required="true" type="email" class="form-control" id="username" aria-describedby="emailHelp"
+                    formControlName="username" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input required="true" type="password" class="form-control" id="password" placeholder="Password"
+                    formControlName="password">
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMessage">
+                {{errorMessage}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="successMessage">
+                {{successMessage}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" type="submit">Login</button>
+        </div>
+    </form>
+</ng-template>
+
+<button class="btn btn-outline-success my-2 my-sm-0" *ngIf="!currentUser" (click)="open(content)">Login</button>
+
+<div class="dropdown" *ngIf="currentUser">
+    <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"/>
+          </svg> {{currentUser.username}}
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+    </div>
+</div>

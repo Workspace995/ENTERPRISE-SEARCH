@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-2">
+        <div class="widget-26-job-category bg-soft-base">
+
+            <span>{{ hit._source['source'] | menulabel }}</span>
+        </div><br/>
+        <div class="badge badge-secondary">{{ hit._source['Grant Number']
+            }}
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="widget-26-job-title">
+            <a href="javascript:;" (click)="openPopup()" [innerHTML]="'Grantee Name: ' + highlight('title')"></a>
+            <p class="m-0"><a href="#" class="employer-name">{{ hit._source['Grantee Address'] }}</a></p>
+            <span class="text-muted time">
+                Start date: {{ hit._source['Project Period Start Date'] }},
+                End date: {{ hit._source['Grant Project Period End Date'] }}
+            </span>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="widget-26-job-info">
+            <p class="type m-0">Program name: {{ hit._source['Grant Program Name'] }}</p>
+            <p class="text-muted m-0">Area name: <span class="location">{{ hit._source['HRSA Program Area Name']
+                    }}</span></p>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="widget-26-job-salary">Grant Activity Code: {{ hit._source['Grant Activity Code'] }}</div>
+        <div class="widget-26-job-salary">Award year: {{ hit._source['Award Year'] }}</div>
+
+    </div>
+</div>

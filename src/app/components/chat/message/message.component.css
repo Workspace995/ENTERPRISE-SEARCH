@@ -1,0 +1,10 @@
+.user-message {
+  background-color:#f2f2f2;
+  width: 280px;
+}
+
+.system-message {
+  background-color: #f2f2f2;
+  width: 280px;
+  color: black;
+}

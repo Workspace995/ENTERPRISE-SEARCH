@@ -1,0 +1,41 @@
+<div class="modal" [style.display]="isPopupDisplayed ? 'block' : 'none'">
+    <div class="modal-content">
+      <h2>Upload CSR Template</h2>
+      <form (submit)="onSubmit()">
+        <label class="custom-file-upload">
+          <input type="file" (change)="handleFileInput($event)">
+          Choose File
+        </label>
+        <div class="file-name">{{ selectedFileName }}</div>
+        <div class="button-container">
+          <button type="submit">Submit</button>
+          <button type="button" (click)="closePopup.emit()">Close</button>
+        </div>
+      </form>
+      <div *ngIf="isSuccess" class="success-message show">The document preparation is in process; you will be notified once it's done.</div>
+      <div *ngIf="showImageNotUploadedMessage" class="not-uploaded-message show">Image not yet uploaded!</div>
+    </div>
+  </div>
+  
+  
+
+
+<!-- 
+   <div class="modal" [style.display]="isPopupDisplayed ? 'block' : 'none'">
+    <div class="modal-content">
+      <h2>Upload CSR Template</h2>
+      <form (submit)="onSubmit()">
+        <label class="custom-file-upload">
+          <input type="file" (change)="handleFileInput($event)">
+          Choose File
+        </label>
+        <div class="file-name">{{ selectedFileName }}</div>
+        <div class="button-container">
+          <button type="submit">Submit</button>
+          <button type="button" (click)="closePopup.emit()">Close</button>
+        </div>
+      </form>
+      <div *ngIf="isSuccess" class="success-message show"></div>
+      <div *ngIf="showImageNotUploadedMessage" class="not-uploaded-message show">Image not yet uploaded!</div>
+    </div>
+  </div> -->

@@ -1,0 +1,23 @@
+
+<ng-container *ngIf="params && params['q']">
+  <app-top-search-result></app-top-search-result>
+</ng-container>
+
+<div class="card card-margin">
+  <div class="card-body">
+    <div class="row search-body">
+      <div class="col-lg-12">
+        <div class="search-result">
+
+          <app-sortby [queryParams]="queryParams" [total]="result?.hits?.total"></app-sortby>
+          <hr/>
+          <app-table [result]="result?.hits?.hits"></app-table>
+
+          <div *ngIf="result?.hits?.total?.value <=0" class="alert alert-info">No records found!</div>
+
+        </div>
+      </div>
+    </div>
+    <app-pages [total]="result?.hits?.total"></app-pages>
+  </div>
+</div>

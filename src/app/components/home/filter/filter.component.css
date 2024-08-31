@@ -1,0 +1,45 @@
+.csr-container {
+    display: flex;
+    justify-content: center; /* Align content horizontally at the center */
+    align-items: center; /* Align content vertically at the center */
+    border-bottom: 2px solid #ccc; /* Add border between CSR Template button and filters */
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+  }
+  
+  /* Apply padding to list items in the filter list */
+  .filter-list li {
+    padding-left: 25px;
+  }
+.filter-list li {
+    padding-left: 25px;
+}
+
+/* Button styles */
+.custom-button {
+    padding: 10px 20px;
+    background-color: #023466;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    animation: slideIn 0.3s ease-in-out forwards;
+}
+
+/* Button hover effect */
+.custom-button:hover {
+    background-color: #0056b3;
+}
+
+/* Button animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-3px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
